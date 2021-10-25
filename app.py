@@ -7,6 +7,20 @@ app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/login')
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    username = request.form.get('username')
+    password = request.form.get('password')
+    if not all(username, password):
+        return "用户名或密码不能为空"
+
+
+
+
+
+@app.route('/hello')
 def hello_world():  # put application's code here
     return 'Hello World!'
 
@@ -27,9 +41,7 @@ def make_qrcode():
     return render_template('qrcode_display.html', img_path=img_path)
 
 
-# @app.route('/display')
-# def display():
-#     return open('static/qrcode.png', 'rb').read()
+
 
 # 本文将作为执行文件时执行函数，在被其他文件引用时不执行函数
 if __name__ == '__main__':
