@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    <label>请选择文件：</label><input type="file", name="file">
+    <input type="submit" value="upload">
+</form>
+<hr>
+<form action="/download/{{ file_name }}">
+<ul>
+    {% for file_name in file_names %}
+        <li>file_name</li> <a>下载</a>
+    {% endfor %}
+</ul>
+</form>
+</body>
+</html>

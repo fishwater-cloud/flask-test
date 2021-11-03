@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %} Register {% endblock %}</h1>  {# 设置title的同时，其值作为header块的内容 #}
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>  {# required表示必填字段 #}
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <input type="submit" value="Register">
+    </form>
+{% endblock %}
